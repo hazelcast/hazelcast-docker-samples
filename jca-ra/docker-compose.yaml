@@ -1,0 +1,13 @@
+JBoss:
+  image: jboss/wildfly
+  volumes:
+   - ../jca/target/hazelcast-jca-example.war:/opt/jboss/wildfly/standalone/deployments/hazelcast-jca-example.war
+   - ../jca/target/hazelcast-jca-example/WEB-INF/lib/hazelcast-3.8.2.jar:/opt/jboss/wildfly/modules/system/layers/base/com/hazelcast/main/hazelcast-3.8.2.jar
+   - ../jca/target/hazelcast-jca-example/WEB-INF/lib/hazelcast-client-3.8.2.jar:/opt/jboss/wildfly/modules/system/layers/base/com/hazelcast/main/hazelcast-client-3.8.2.jar
+   - ../jca/target/hazelcast-jca-example/WEB-INF/lib/hazelcast-jca-3.7.jar:/opt/jboss/wildfly/modules/system/layers/base/com/hazelcast/main/hazelcast-jca-3.7.jar
+   - ../jca/resources/hazelcast/module.xml:/opt/jboss/wildfly/modules/system/layers/base/com/hazelcast/main/module.xml
+   - ../jca/resources/javax/module.xml:/opt/jboss/wildfly/modules/system/layers/base/javax/cache/api/main/module.xml
+   - ../jca/target/hazelcast-jca-example/WEB-INF/lib/cache-api-1.0.0.jar:/opt/jboss/wildfly/modules/system/layers/base/javax/cache/api/main/cache-api-1.0.0.jar
+   - ../jca/target/hazelcast-jca-rar-3.7.rar:/opt/jboss/wildfly/standalone/deployments/hazelcast-jca-rar-3.7.rar
+  ports:
+   - "8080:8080"
