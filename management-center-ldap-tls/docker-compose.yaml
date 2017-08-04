@@ -1,0 +1,21 @@
+version: '2.1'
+services:
+ openldap:
+    image: bilaldemirci/openldap-tls
+    ports:
+     - 389:389
+ management-center:
+    image: hazelcast/management-center
+    volumes: 
+     - ../management-center-ldap-tls/security.properties:/data/security.properties
+     - ../management-center-ldap-tls/ldap.properties:/data/ldap.properties
+     - ../management-center-ldap-tls/logback-test.xml:/opt/hazelcast/hazelcast-3.8.2/mancenter/logback-test.xml
+     - ../management-center-ldap-tls/myTrustStore:/opt/hazelcast/myTrustStore
+    environment:
+     - JAVA_OPTS=-Djavax.net.ssl.trustStore=/opt/hazelcast/myTrustStore -Djavax.net.ssl.trustStorePassword=hazelcast -Djavax.net.debug=ssl
+    depends_on: 
+     - openldap 
+    ports:
+     - 8080:8080
+    links:
+     - "openldap:ldapIP"
