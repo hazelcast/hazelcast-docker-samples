@@ -26,7 +26,7 @@ You should have installed Docker on your System.
 
 5. Login with this credentials;
 
-Username: `guest` Password: `password`
+Username: `emre` Password: `password`
 
 
 <h2>Use Your Own Data</h2>
