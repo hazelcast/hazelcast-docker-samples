@@ -16,19 +16,13 @@ You should have installed Docker and Apache Maven on your System.
 
 `cd hazelcast-docker-samples/management-center-jaas/`
 
-3. Build Maven project;
+3. Run `run.sh` shell file from terminal.
 
-`mvn package`
-
-4. Launch the application using the Docker command;
-
-`docker-compose up`
-
-5. Open a browser and enter;
+4. Open a browser and enter;
  
  `http://localhost:8080/mancenter`
 
-6. Login with this credentials;
+5. Login with this credentials;
 
 Username: `admin` Password: `pass1`
 
