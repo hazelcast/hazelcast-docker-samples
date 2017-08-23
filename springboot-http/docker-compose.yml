@@ -1,0 +1,48 @@
+version: '2.1'
+networks:
+  network:
+    driver: bridge
+    ipam:
+     config:
+     - subnet: 172.22.0.0/16
+services:
+  portal:
+    image: nginx
+    ports:
+     - "8080:80"
+    volumes:
+     - ../springboot-http/default.conf:/etc/nginx/conf.d/default.conf
+    links:
+     - tomcatServerOne:tomcat1
+     - tomcatServerTwo:tomcat2
+    networks:
+        network:
+            ipv4_address: 172.22.0.5
+  tomcatServerOne:
+    image: tomcat:8.5-jre8
+    ports:
+     - "8080"
+    volumes:
+     - ../springboot-http/target/springboot-http-0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/example.war
+     - ../springboot-http/hazelcast-tomcat85-sessionmanager-1.1.1.jar:/usr/local/tomcat/lib/hazelcast-tomcat85-sessionmanager-1.1.1.jar
+     - ../springboot-http/hazelcast-all-3.8.3.jar:/usr/local/tomcat/lib/hazelcast-all-3.8.3.jar
+     - ../springboot-http/server.xml:/usr/local/tomcat/conf/server.xml
+     - ../springboot-http/context.xml:/usr/local/tomcat/conf/context.xml
+     - ../springboot-http/hazelcast-client.xml:/usr/local/tomcat/lib/hazelcast-client.xml
+    networks:
+        network:
+            ipv4_address: 172.22.0.3
+  tomcatServerTwo:
+    image: tomcat:8.5-jre8
+    ports:
+     - "8080"
+    volumes:
+     - ../springboot-http/target/springboot-http-0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/example.war
+     - ../springboot-http/hazelcast-tomcat85-sessionmanager-1.1.1.jar:/usr/local/tomcat/lib/hazelcast-tomcat85-sessionmanager-1.1.1.jar
+     - ../springboot-http/hazelcast-all-3.8.3.jar:/usr/local/tomcat/lib/hazelcast-all-3.8.3.jar
+     - ../springboot-http/server.xml:/usr/local/tomcat/conf/server.xml
+     - ../springboot-http/context.xml:/usr/local/tomcat/conf/context.xml
+     - ../springboot-http/hazelcast-client.xml:/usr/local/tomcat/lib/hazelcast-client.xml
+    networks:
+        network:
+            ipv4_address: 172.22.0.4
