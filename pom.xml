@@ -32,6 +32,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.integration.version>1.8</jdk.integration.version>
         <maven.compiler.plugin.version>3.5.1</maven.compiler.plugin.version>
+        <maven.war.plugin>2.4</maven.war.plugin>
     </properties>
 
     <modules>
@@ -40,6 +41,7 @@
         <module>hibernate-jpa-2ndlevel-cache</module>
         <module>jca-ra</module>
         <module>manager-based-session-replication</module>
+        <module>springboot-http</module>
 
     </modules>
 

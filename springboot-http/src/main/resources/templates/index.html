@@ -9,24 +9,6 @@
 
 		<h3>Hits</h3>
 		<p th:text="${#httpSession.getAttribute('hits')}"/>
-		
 
-		<!--/* Confirm which cluster member this process contains */-->
-		
-		<div th:if="${beans.containsKey('hazelcastInstance')}">
-			<hr/>
-				<div style="color:blue">
-					<p th:text="'Cluster member ' + ${@hazelcastInstance}"/>
-				</div>				
-			<hr/>
-		</div>
-		<div th:unless="${beans.containsKey('hazelcastInstance')}">
-			<hr/>
-				<div style="color:red">
-					<p>No Hazelcast @Bean</p>
-				</div>				
-			<hr/>
-		</div>
-		
 	</body>
 </html>

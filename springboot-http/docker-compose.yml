@@ -28,7 +28,6 @@ services:
      - ../springboot-http/hazelcast-all-3.8.3.jar:/usr/local/tomcat/lib/hazelcast-all-3.8.3.jar
      - ../springboot-http/server.xml:/usr/local/tomcat/conf/server.xml
      - ../springboot-http/context.xml:/usr/local/tomcat/conf/context.xml
-     - ../springboot-http/hazelcast-client.xml:/usr/local/tomcat/lib/hazelcast-client.xml
     networks:
         network:
             ipv4_address: 172.22.0.3
@@ -42,7 +41,6 @@ services:
      - ../springboot-http/hazelcast-all-3.8.3.jar:/usr/local/tomcat/lib/hazelcast-all-3.8.3.jar
      - ../springboot-http/server.xml:/usr/local/tomcat/conf/server.xml
      - ../springboot-http/context.xml:/usr/local/tomcat/conf/context.xml
-     - ../springboot-http/hazelcast-client.xml:/usr/local/tomcat/lib/hazelcast-client.xml
     networks:
         network:
             ipv4_address: 172.22.0.4

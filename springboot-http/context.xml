@@ -28,6 +28,6 @@
     <!--
     <Manager pathname="" />
     -->
-     <Manager className="com.hazelcast.session.HazelcastSessionManager"
-             clientOnly="true"/>
+    <Manager className="com.hazelcast.session.HazelcastSessionManager"/>
+
 </Context>
