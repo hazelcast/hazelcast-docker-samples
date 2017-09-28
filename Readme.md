@@ -1,1 +1,0 @@
-Hazelcast Docker Code Samples
