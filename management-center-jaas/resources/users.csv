@@ -1,0 +1,4 @@
+admin,pass1,MancenterAdmin
+mesut,pass12,MancenterUser
+hasan,pass123,MancenterMetricsOnlyUser
+bilal,pass1234,MancenterReadonlyUser

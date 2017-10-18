@@ -40,6 +40,7 @@
         <module>hibernate-jpa-2ndlevel-cache</module>
         <module>jca-ra</module>
         <module>manager-based-session-replication</module>
+        <module>management-center-jaas</module>
 
     </modules>
 
