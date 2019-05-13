@@ -64,3 +64,7 @@ This repository contains an extensive collection of code samples which you can u
 - <h3>management-center-jaas</h3> 
     
     Implementation of authenticating Hazelcast Management Center with JAAS.
+
+- <h3>management-center-built-in-user</h3>
+
+    Implementation of Hazelcast Management Center image with a built-in user account.

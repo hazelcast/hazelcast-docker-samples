@@ -22,7 +22,7 @@ You should have installed Docker on your System.
 
 4. Open a browser and enter:
  
- `http://localhost:8080/mancenter`
+ `http://localhost:8080/hazelcast-mancenter`
 
 5. Login with this credentials;
 
