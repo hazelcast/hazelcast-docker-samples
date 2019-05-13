@@ -16,27 +16,28 @@ import java.io.FileReader;
 
 public class SampleLoginModule implements LoginModule {
 
-
     private Subject subject;
     private String password;
     private String username;
-    public Map<String, List<String>> userMap;
-
+    private Map<String, List<String>> userMap;
 
     @Override
-    public void initialize(Subject subject, CallbackHandler callbackHandler, Map<String, ?> sharedState, Map<String, ?> options) {
+    public void initialize(Subject subject,
+                           CallbackHandler callbackHandler,
+                           Map<String, ?> sharedState,
+                           Map<String, ?> options) {
+
         this.subject = subject;
 
-        userMap = new HashMap();
+        userMap = new HashMap<>();
         String csvFile = "/opt/users.csv";
-        String line = "";
+        String line;
         String cvsSplitBy = ",";
 
         try {
             BufferedReader br = new BufferedReader(new FileReader(csvFile));
 
             while ((line = br.readLine()) != null) {
-
                 String[] user = line.split(cvsSplitBy);
                 userMap.put(user[0], Arrays.asList(user[1], user[2]));
             }
@@ -52,7 +53,6 @@ public class SampleLoginModule implements LoginModule {
 
             password = new String(passwordCallback.getPassword());
             username = nameCallback.getName();
-
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -60,14 +60,12 @@ public class SampleLoginModule implements LoginModule {
 
     @Override
     public boolean login() throws LoginException {
-
         if (!userMap.containsKey(username)) {
             throw new LoginException("Bad User");
         }
 
         if (!userMap.get(username).contains(password)){
             throw new LoginException("Bad Password");
-
         }
 
         subject.getPrincipals().add(new Principal() {

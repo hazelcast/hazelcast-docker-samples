@@ -7,5 +7,7 @@ services:
      - ../management-center-jaas/resources/jaas.properties:/data/jaas.properties
      - ../management-center-jaas/target/management-center-jaas-0.1-SNAPSHOT.jar:/opt/lib/management-center-jaas-0.1-SNAPSHOT.jar
      - ../management-center-jaas/resources/users.csv:/opt/users.csv
+    environment:
+      - MC_CLASSPATH=/opt/lib/*
     ports:
      - 8080:8080
