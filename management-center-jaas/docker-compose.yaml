@@ -1,7 +1,8 @@
 version: '2.1'
 services:
  management-center:
-    image: hazelcast/management-center
+    # TODO change to 3.12.1 once it's released (requires MC_CLASSPATH env var support)
+    image: hazelcast/management-center:latest
     volumes:
      - ../management-center-jaas/resources/security.properties:/data/security.properties
      - ../management-center-jaas/resources/jaas.properties:/data/jaas.properties
