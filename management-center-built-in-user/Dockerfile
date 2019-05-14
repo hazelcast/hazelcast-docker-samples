@@ -1,3 +1,4 @@
+# TODO change to 3.12.1 once it's released (requires start script)
 FROM hazelcast/management-center:latest
 
 # Start Management Center

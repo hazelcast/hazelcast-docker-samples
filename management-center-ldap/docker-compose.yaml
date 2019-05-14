@@ -5,7 +5,7 @@ services:
     ports:
      - 389:389
  management-center:
-    image: hazelcast/management-center
+    image: hazelcast/management-center:3.12
     volumes: 
      - ../management-center-ldap/security.properties:/data/security.properties
      - ../management-center-ldap/ldap.properties:/data/ldap.properties
