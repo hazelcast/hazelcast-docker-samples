@@ -37,21 +37,9 @@ This repository contains an extensive collection of code samples which you can u
 	
     Implementation of session replication integration of Hazelcast.
 
-- <h3>hibernate-2ndlevel-cache</h3>
-	
-    Implementation of hibernate 2nd level cache integration of Hazelcast as employee managing application.
-
-- <h3>jca-ra</h3>
-	
-    Implementation of jca resource adapter integration of Hazelcast.
-
 - <h3>manager-based-session-replication</h3>
     
     Implementation of tomcat/jetty session replication integration of Hazelcast.
-
-- <h3>hibernate-jpa-2ndlevel-cache</h3>
-
-    Implementation of hibernate 2nd level cache with Hazelcast by using JPA.
     
 - <h3>management-center-ldap</h3>
     
