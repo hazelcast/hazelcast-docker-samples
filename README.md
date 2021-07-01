@@ -1,3 +1,5 @@
+<h1>Samples in this repository are outdated.</h1>
+
 <h1>Hazelcast Docker Code Samples</h1>
 
 [Logo1]: Logo1.png "Image Logo1.png" 
